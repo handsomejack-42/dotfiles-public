@@ -1,0 +1,51 @@
+# Cross-platform CLI baseline. Formulae only, so it installs on both macOS and
+# Linux; none of these carry a macOS-only requirement.
+#
+#   brew bundle install --file brew/Brewfile
+#
+# This is a partial list by design. Never run `brew bundle cleanup` against it,
+# as cleanup uninstalls everything the file does not mention.
+
+# shell and prompt
+brew "fish"
+brew "oh-my-posh"
+brew "zoxide"
+brew "direnv"
+brew "fzf"
+brew "tmux"
+
+# core cli
+brew "bat"
+brew "btop"
+brew "cloc"
+brew "eza"
+brew "fd"
+brew "jq"
+brew "ripgrep"
+brew "socat"
+brew "yq"
+brew "sl"
+
+# git and editors
+brew "gh"
+brew "git-filter-repo"
+brew "neovim"
+brew "tree-sitter"
+
+# languages and build
+brew "go"
+brew "mage"
+brew "node@24", link: true
+brew "protobuf"
+brew "uv"
+
+# linting and analysis
+brew "semgrep"
+brew "shellcheck"
+
+# observability
+brew "grafana"
+
+# npm tools
+npm "corepack"
+npm "tree-sitter-cli"

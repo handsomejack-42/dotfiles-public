@@ -8,17 +8,24 @@ Nothing machine-specific or secret belongs here.
 
 | Path | Notes |
 |---|---|
+| `brew/Brewfile` | cross-platform CLI baseline; formulae only, installs on macOS and Linux |
 | `config/tmux/tmux.conf` | prefix is `C-Space`; plugins are managed by tpm and not tracked |
 
 ## Install
 
 ```fish
 git clone https://github.com/handsomejack-42/dotfiles-public.git ~/source/dotfiles-public
+cd ~/source/dotfiles-public
+
+brew bundle install --file brew/Brewfile
+
 ln -s ~/source/dotfiles-public/config/tmux ~/.config/tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 Then start tmux and press `prefix + I` to install the plugins.
+
+`brew/Brewfile` is deliberately a partial list, so never run `brew bundle cleanup` against it - cleanup uninstalls everything the file does not mention.
 
 ## Terminal keys
 
